@@ -1,0 +1,740 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+html {
+    --scrollbarBG: #f64518;
+    --thumbBG: #efff0b;
+  }
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    gap: 0;
+    position: relative;
+    scroll-behavior: smooth;
+    perspective: 1px;
+    transform-style: preserve-3d;
+}
+body::-webkit-scrollbar {
+    width: 0.3em;
+  }
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(74, 72, 72);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.368);
+    outline: 1px solid rgba(255, 0, 0, 0.368);
+    border-radius: 50px;
+  }
+header{
+    background-image:linear-gradient( 60deg ,whitesmoke 80%, rgb(74, 72, 72) 20%);
+    position: sticky;
+    width: 100vw;
+    top: 0;
+    z-index: 100;
+}
+header .fa{
+    color: red;
+    padding: 7px 10px 7px 10px ;
+    background: whitesmoke;
+    border-radius: 5px;
+}
+header .fa:hover{
+    background: grey;
+}
+li{
+    list-style-type: none;
+}
+a{
+    color: grey;
+    text-decoration: none;
+    font-size: small;
+    font-weight: bold;
+}
+
+.navbar{
+    min-height: 110px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 24px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.088);
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+.nav-branding{
+    height: 6rem;
+    cursor: pointer;
+}
+.nav-link{
+    transition: 0.7s ease;
+}
+.nav-link:hover{
+    color: red;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
+    background-color: red;
+}
+.banner{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("images/banners.jfif");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    position: relative;
+}
+.banner h1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 4em;
+    font-family:helvetica;
+}
+.banner p{
+    color: whitesmoke;
+    font-size: 1.4em;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.537);
+    padding: 0 15px 0 15px;
+    padding: 10px;
+}
+.banner .buttons{
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+}
+.banner button{
+    padding: 10px;
+    border: none;
+    color: red;
+    background: whitesmoke;
+    font-weight: bold;
+}
+.banner button a{
+    display: flex;
+    gap: 10px;
+    color: red;
+}
+.banner h4{
+    color: rgb(74, 72, 72);
+    font-weight: bold;
+    font-size: 15px;
+}
+.banner .footer{
+    width: 100%;
+    height: 20%;
+    background-color: rgb(74, 72, 72);
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    color: whitesmoke;
+}
+.banner h3{
+    text-align: center;
+    font-size: 2em;
+}
+.infra{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.infra h2{
+    color: rgb(74, 72, 72);
+    font-size: 2em;
+    text-align: center;
+    margin: 0;
+}
+.infra p{
+    width: 50%;
+    text-align: justify;
+    padding: 20px 0 ;
+    font-size: 17px;
+    line-height: 2em;
+    color: gray;
+}
+.infra h1{
+    font-size: 40px;
+    color: red;
+    font-size: 4em;
+    font-family: helvetica;
+    text-align: center;
+    line-height: 0;
+    display: flex;
+    margin-top: 50px;
+}
+.round{
+    width: 60vw;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    overflow-x: scroll;
+    line-height: 2em;
+    gap: 20px;
+    position: relative;
+    scroll-behavior: smooth;
+}
+.round::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+.round .cards{
+    max-width: 100%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: rgb(74, 72, 72);
+    cursor: pointer;
+    box-shadow: 3px 3px 10px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-transition: all 10s ease;
+    transition: 10s ease;
+}
+.round .cards:hover{
+    width: 50%;
+    animation-name: Hover;
+    /* animation-delay: 0.3s; */
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-iteration-count: inherit;
+}
+@keyframes Hover {
+    0%{
+        background-image: linear-gradient(whitesmoke 100%, red 0%);
+    }
+    10%{
+        background-image: linear-gradient(whitesmoke 90%, red 10%);
+    }
+    20%{
+        background-image: linear-gradient(whitesmoke 80%, red 20%);
+    }
+    30%{
+        background-image: linear-gradient(whitesmoke 70%, red 30%);
+    }
+    40%{
+        background-image: linear-gradient(whitesmoke 60%, red 40%);
+    }
+    50%{
+        background-image: linear-gradient(whitesmoke 50%, red 50%);
+    }
+    60%{
+        background-image: linear-gradient(whitesmoke 40%, red 60%);
+    }
+    70%{
+        background-image: linear-gradient(whitesmoke 30%, red 70%);
+    }
+    80%{
+        background-image: linear-gradient(whitesmoke 20%, red 80%);
+    }
+    90%{
+        background-image: linear-gradient(whitesmoke 10%, red 90%);
+    }
+    100%{
+        background-image: linear-gradient(whitesmoke 0%, red 100%);
+    }
+
+}
+.round button{
+    background: rgba(74, 72, 72, 0.2);
+    position:sticky;
+    border: none;
+    color: whitesmoke;
+    font-size: 2em;
+    z-index: 90;
+    padding: 10px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.round button:hover{
+    background-color: rgb(74, 72, 72)
+}
+#slideLeft{
+    left: 10px;
+}
+#slideRight{
+    right: 10px;
+}
+.cards > img {
+    margin-bottom: .75rem;
+    width: 100%;
+    border-bottom-left-radius:20px ;
+  }
+  .cards h1{
+    color: whitesmoke;
+    text-align: center;
+    font-size: 1em;
+  }
+  .cards > a{
+    color: whitesmoke;
+    background: red;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .construction{
+    width: 100%;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(74, 72, 72);
+  }
+  .construction h1{
+    font-size: 3em;
+  }
+ .line{
+    height: 3px;
+    width: 30%;
+    background-color: red;
+    margin: 20px 0;
+  }
+  .construction p{
+    width: 70%;
+    margin: 20px 0;
+    line-height: 2em;
+  }
+  .construction .cardsLine{
+    width: 90%;
+    display: flex;
+  }
+
+  .construction .card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(128, 128, 128, 0.395);
+    align-items: center;
+    padding: 20px 0 20px 0;
+    position: relative;
+    width: 33.333%;
+  }
+  .cardsLine .card .topImg{
+    height: 40px;
+    width: 40px;
+    margin: 30px 0;
+  }
+  .card h5{
+    font-size: 17px;
+    color: black;
+  }
+  .card p{
+    width: 90%;
+    font-size: 14px;
+    text-align: justify;
+    font-family: cursive;
+  }
+  .card a{
+    padding: 10px;
+    background: red;
+    color: whitesmoke;
+    visibility: hidden;
+    transition: 0.7s ease;
+  }
+  .card:hover > a{
+    visibility: visible;
+  }
+  .contact{
+    padding: 20px 0;
+    color: rgb(74, 72, 72);
+  }
+  .contact h1{
+    font-size: 3em;
+    text-align: center;
+  }
+  .contact .sides{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  .contact .sides .image{
+    width: 40%;
+    display: flex;
+    place-items: center;
+  }
+  .contact .sides .image > img{
+    width: 100%;
+  }
+  .form{
+    width: 60%;
+  }
+  .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+  input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgba(255, 0, 0, 0.799);
+  }
+  
+  /* Add a background color and some padding around the form */
+
+
+  .myFooter{
+    width: 100vw;
+    height: 30vh;
+    background-image: url("https://thumbs.dreamstime.com/b/abstract-black-texture-sports-vector-illustration-geometric-background-red-hexagon-modern-shape-concept-194942394.jpg");
+  }
+  .myFooter .line{
+    background-color: whitesmoke;
+    width: 7rem;
+  }
+  .myFooter h3{
+    font-size: 2em;
+    color: whitesmoke;
+    margin: 30px 0 ;
+  }
+  .myFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .myFooter p{
+    color: whitesmoke;
+    font-size: 17px;
+    line-height: 2em;
+  }
+  .mainFooter{
+    width: 100%;
+    display: flex;
+    color: whitesmoke;
+    background-color: rgb(74, 72, 72);
+  }
+  .mainFooter h5{
+    font-size: 1.3em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid whitesmoke;
+  }
+  .mainFooter img{
+    height: 100px;
+    background: whitesmoke;
+    border-radius: 20px;
+  }
+  .mainFooter .footPart{
+    width: 33.333%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0;
+    position: relative;
+  }
+  .mainFooter p{
+    width: 80%;
+    text-align: justify;
+    padding: 20px 0 20px 0;
+    line-height: 2em;
+    height: 30vh;
+    font-size: 14px;
+    overflow-y:scroll;
+  }
+  .mainFooter p::-webkit-scrollbar {
+    width: 0.3em;
+  }
+   
+  .mainFooter p::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgb(74, 72, 72);
+  }
+   
+  .mainFooter p::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.368);
+    outline: 1px solid rgba(255, 0, 0, 0.368);
+    border-radius: 50px;
+  }
+  .mainFooter a .fa{
+    color: whitesmoke;
+    margin-right: 30px;
+  }
+  .mainFooter a{
+    color: whitesmoke;
+  }
+  .mainFooter button{
+    padding: 10px;
+    background: red;
+    color: whitesmoke;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+  }
+  .mainFooter button .fa{
+    margin-right: 10px;
+  }
+  .copyRight{
+    height: 50px;
+    width: 100%;
+    background: black;
+    color: whitesmoke;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  #myBtn {
+    /* display: none; */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 50px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+@media(max-width:868px){
+    body{
+        overflow-x: hidden;
+    }
+    header{
+    background-image:linear-gradient( 60deg ,whitesmoke 70%, rgb(74, 72, 72) 30%);
+    overflow-x: hidden;
+    }
+    a{
+        color: whitesmoke;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        display: none;
+        top: 110px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 1s;
+        background-color: black;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        right: 0;
+        display: block;
+    }
+    .banner{
+        height: 70vh;
+        width: 100vw;
+    }
+    .banner h1{
+        font-size: 3em;
+    }
+    .banner p{
+        font-size: 1em;
+        /* background-color: transparent; */
+    }
+    .banner .buttons{
+        flex-direction: column;
+        gap: 0;
+    }
+    .banner button{
+        margin: 5px 0 5px 0;
+    }
+    .banner .footer{
+        height: 10%;
+    }
+    .banner h3{
+        font-size: 0.7em;
+    }
+    .infra{
+        width: 80vw;
+    }
+    .infra h2{
+        font-size: 1em;
+    }
+    .infra p{
+        width: 70%;
+        font-size: small;
+    }
+    .round{
+        width: 90%;
+    }
+    .construction .cardsLine{
+        flex-direction: column;
+    }
+    .construction h1{
+        font-size: 2em;
+    }
+    .construction p{
+        font-size: small;
+        width: 90%;
+    }
+    .construction .card{
+        width: 100%;
+    }
+    .construction .card h5{
+        font-size: smaller;
+    }
+    .contact .sides{
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact .sides .image{
+        width: 100%;
+    }
+    .contact .form{
+        width: 100%;
+    }
+    .myFooter{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        place-items: center;
+        color: red;
+        display: none;
+    }
+    .mainFooter{
+        flex-direction: column;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .mainFooter .footPart{
+        width: 100%;
+    }
+    .mainFooter .footPart .form{
+        width: 100%;
+        margin: 0;
+    }
+    .copyRight{
+        font-size: 7px;
+    }
+    .mainFooter .footPart{
+        gap: 20px;
+    }
+}
+@media(max-width:760px){
+    body{
+        overflow-x: hidden;
+    }
+    .banner{
+        width: auto;
+    }
+    .banner h1{
+        font-size: 2em;
+    }
+    .banner p{
+        font-size: 0.7em;
+        text-align: center;
+    }
+    .infra{
+        width: 90vw;
+    }
+    .infra h2{
+        font-size: 1em;
+    }
+    .round{
+        width: 100%;
+        flex-direction: column;
+    }
+    .round button{
+      display: none;
+    }
+    .round .cards{
+      width: auto;
+      padding: 0.5rem;
+      box-shadow: none;
+      margin: 0;
+   }
+
+    /* 
+    .cards > img{
+        width: 100%;
+    }
+    .cards a{
+        width: 100%;
+        margin-top: 10px;
+        padding: 0;
+    }
+    .mainFooter .footPart{
+        border: none;
+    } */
+}

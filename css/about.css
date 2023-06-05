@@ -1,0 +1,20 @@
+.b4{
+    background-image: url("https://t4.ftcdn.net/jpg/03/33/14/19/360_F_333141947_xz1nD223W2f9EW43iZbjGqCRFC3WAgTy.jpg");
+    height: 50vh;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main h1{
+    margin: 20px 0 20px 0;
+    color: red;
+    text-decoration: underline;
+}
+.main p{
+    width: 70%;
+    line-height: 2.5em;
+    color: grey;
+}

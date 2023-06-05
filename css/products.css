@@ -1,0 +1,138 @@
+.b3{
+    background-image: url("https://t4.ftcdn.net/jpg/03/33/14/19/360_F_333141947_xz1nD223W2f9EW43iZbjGqCRFC3WAgTy.jpg");
+    height: 50vh;
+}
+body{
+    align-items: center;
+}
+.products{
+    width: 100vw;
+    margin: 20px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    overflow-x: scroll;
+    line-height: 2em;
+    gap: 20px;
+    position: relative;
+    scroll-behavior: smooth;
+}
+.products::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+.products .procards{
+    max-width: 100%;
+    padding: .75rem;
+    margin-bottom: 2rem;
+    border: 0;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: whitesmoke;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-transition: all 10s ease;
+    transition: 10s ease;
+}
+.products .procards:hover{
+    width: 50%;
+    animation-name: Hover;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-iteration-count: inherit;
+}
+@keyframes Hover {
+    0%{
+        background-image: linear-gradient(whitesmoke 100%, red 0%);
+    }
+    10%{
+        background-image: linear-gradient(whitesmoke 90%, red 10%);
+    }
+    20%{
+        background-image: linear-gradient(whitesmoke 80%, red 20%);
+    }
+    30%{
+        background-image: linear-gradient(whitesmoke 70%, red 30%);
+    }
+    40%{
+        background-image: linear-gradient(whitesmoke 60%, red 40%);
+    }
+    50%{
+        background-image: linear-gradient(whitesmoke 50%, red 50%);
+    }
+    60%{
+        background-image: linear-gradient(whitesmoke 40%, red 60%);
+    }
+    70%{
+        background-image: linear-gradient(whitesmoke 30%, red 70%);
+    }
+    80%{
+        background-image: linear-gradient(whitesmoke 20%, red 80%);
+    }
+    90%{
+        background-image: linear-gradient(whitesmoke 10%, red 90%);
+    }
+    100%{
+        background-image: linear-gradient(whitesmoke 0%, red 100%);
+    }
+
+}
+.products button{
+    background: rgba(74, 72, 72, 0.2);
+    position:sticky;
+    border: none;
+    color: whitesmoke;
+    font-size: 2em;
+    z-index: 90;
+    padding: 10px;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.products button:hover{
+    background-color: rgb(74, 72, 72)
+}
+#proslideLeft{
+    left: 10px;
+}
+#proslideRight{
+    right: 10px;
+}
+.procards > img {
+    margin-bottom: .75rem;
+    width: 100%;
+    border-bottom-left-radius:20px ;
+  }
+  .procards h1{
+    color: grey;
+    text-align: center;
+    font-size: 1em;
+  }
+  .procards > a{
+    color: whitesmoke;
+    background: red;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  @media(max-width:660px){
+    .products{
+        width: 100%;
+        flex-direction: column;
+    }
+    .products button{
+      display: none;
+    }
+    .products .procards{ 
+      width: auto;
+      padding: 0.5rem;
+      box-shadow: none;
+      margin: 0;
+   }
+  }
